@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <main class="container">
         <div class="form">
             <h3>Confira o Clima de uma Cidade:</h3>
             <div class="form-input-container">
@@ -55,7 +55,13 @@
                 </p>
             </div>
         </div>
-    </div>
+        <div id="error-message" class="hide">
+            <p>Não foi possível encontrar o clima de uma cidade com este nome.</p>
+        </div>
+        <div id="loader" class="hide">
+            <i class="fa-solid fa-spinner"></i>
+        </div>
+    </main>
 </body>
 
 </html>

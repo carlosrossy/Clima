@@ -13,7 +13,15 @@ const windElement = document.querySelector("#wind span");
 
 const weatherContainer = document.querySelector("#weather-data");
 
+const errorMessageContainer = document.querySelector("#error-message");
+const loader = document.querySelector("#loader");
+
+const toggleLoader = () => {
+    loader.classList.toggle("hide");
+};
+
 const getWeatherData = async (city) => {
+    toggleLoader();
 
     const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
 
@@ -22,11 +30,29 @@ const getWeatherData = async (city) => {
 
     console.log(data)
 
+    toggleLoader();
+
     return data;
 };
 
+const showErrorMessage = () => {
+    errorMessageContainer.classList.remove("hide");
+};
+
+const hideInformation = () => {
+    errorMessageContainer.classList.add("hide");
+    weatherContainer.classList.add("hide");
+};
+
 const showWeatherData = async (city) => {
+    hideInformation();
+
     const data = await getWeatherData(city);
+
+    if (data.code === "404") {
+        showErrorMessage();
+        return;
+    }
 
     cityElement.innerText = data.name;
     tempElement.innerText = parseInt(data.main.temp);
@@ -35,8 +61,8 @@ const showWeatherData = async (city) => {
         "src",
         `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
     );
-    console.log(data.sys.country)
-    countryElement.setAttribute("src", `"https://countryflagsapi.com/png/${data.sys.country}`);
+
+    countryElement.setAttribute("src", `https://flagsapi.com/${data.sys.country}/flat/64.png`);
     umidityElement.innerText = `${data.main.humidity}%`;
     windElement.innerText = `${data.wind.speed}km/h`;
 
