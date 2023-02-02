@@ -32,3 +32,5 @@ $ git https://github.com/carlosrossy/Clima.git
 # 💬 Contribuindo
 
 Contribuições são sempre bem-vindas! Sinta-se livre para abrir issues e enviar pull requests.
+
+with ❤️ by [Carlos Eduardo](https://www.linkedin.com/in/carlos-eduardo-996672222/)
