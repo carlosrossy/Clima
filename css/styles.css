@@ -84,6 +84,10 @@ body {
     margin: 0.6rem;
 }
 
+#temperature {
+    font-size: 4rem;
+}
+
 #country {
     height: 25px;
 }
