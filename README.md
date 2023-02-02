@@ -9,12 +9,12 @@ A api disponibilizada para consumo pode ser encontrada [aqui](https://openweathe
 
 1 - Clone este repositório
 ```bash
-$ git clone git@github.com:carlosrossy/Clima.git
+git clone git@github.com:carlosrossy/Clima.git
 ```
 ou
 
 ```bash
-$ git https://github.com/carlosrossy/Clima.git
+git https://github.com/carlosrossy/Clima.git
 ```
 
 2 - Crie uma conta gratuita na API openweather e adicione a sua API key no arquivo 'sripts.js'
